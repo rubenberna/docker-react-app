@@ -6,11 +6,11 @@ WORKDIR /app
 
 COPY package.json .
 
-RUN npm install
+RUN yarn
 
 COPY . .
 
-RUN npm run build
+RUN yarn build
 
 # Run phase. By writing a second FROM statement, we specify a second running block 
 

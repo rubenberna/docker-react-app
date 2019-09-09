@@ -10,4 +10,4 @@ before_install:
 
 # we add the -- --coverage command just to make sure the npm test suit is exited after it ran, because the default behaviour is to expect an input
 script:
-  - docker run -e CI=true rubenberna/docker-reactApp npm run test -- --coverage
+  - docker run rubenberna/docker-reactApp yarn test -- --coverage
