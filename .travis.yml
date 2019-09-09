@@ -6,7 +6,7 @@ services:
 
 # series of steps before we attempt to test our app or deploy
 before_install:
-  - docker build -t rubenberna/docker-reactApp -f Dockerfile.dev .
+  - docker build -t rubenberna/react-app -f Dockerfile.dev .
 
 # we add the -- --coverage command just to make sure the npm test suit is exited after it ran, because the default behaviour is to expect an input
 script:
