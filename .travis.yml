@@ -11,3 +11,18 @@ before_install:
 # we add the -- --coverage command just to make sure the npm test suit is exited after it ran, because the default behaviour is to expect an input
 script:
   - docker run -e CI=true rubenberna/react-app npm run test -- --coverage
+
+# inform travis how to take our application and deploy it in AWS
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-west-1"
+  app: "docker-react"
+  env: "DockerReact-env"
+  bucket_name: "elasticbeanstalk-eu-west-1-305799247952"
+  bucket_path: "docker-react"
+  on:
+    branch: master
+  access_key_id:
+  secure: "$AWS_ACCESS_KEY"
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
